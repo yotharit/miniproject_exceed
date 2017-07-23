@@ -108,7 +108,6 @@ $(document).ready(function() {
       console.log("FAIL");
     });
 
-
   }, 2000);
 
 
