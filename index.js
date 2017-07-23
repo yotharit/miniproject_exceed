@@ -1,3 +1,4 @@
+var lightMStatus = 0;
 $(document).ready(function() {
   var link = "http://158.108.165.223/data/5910500147/"
 
@@ -18,14 +19,18 @@ $(document).ready(function() {
   // });
 
   //LIGHT URL
-  var lightM = mainURL + "lightM"
+
+  if(lightMStatus === 0){
+    $('#textLight').val("FRONT LIGHT IS CLOSE!");
+  }
 
   //Control the Door!
-  $('#doorButton').click(function() {
+  $('#flightButton').click(function() {
     $.ajax({
-      url: link //ต้องเพิ่ม
+      url: link + "frontLight/set/1"
     }).done(function() {
       console.log("SUCCESS");
+      $('#textLight').val("FRONT LIGHT IS OPEN!");
     }).fail(function() {
       console.log("FAIL");
     })
@@ -33,15 +38,15 @@ $(document).ready(function() {
 
 
 
-  setInterval(function() {
-    $.ajax({
-      url: lightM
-    }).done(function() {
-      console.log("SUCCESS");
-    }).fail(function() {
-      console.log("FAIL");
-    });
-  }, 2000);
+  // setInterval(function() {
+  //   $.ajax({
+  //     url: link + "frontLight"
+  //   }).done(function() {
+  //     console.log("SUCCESS");
+  //   }).fail(function() {
+  //     console.log("FAIL");
+  //   });
+  // }, 2000);
 
 
 });
