@@ -1,6 +1,21 @@
-$(document).ready(function({
+$(document).ready(function() {
+  var link = "http://158.108.165.223/data/5910500147/"
 
-  var mainURL = "http://158.108.165.223/data/5910500147/"
+  // $.ajax({
+  //   url: link + "light"
+  // }).done(function(data) {
+  //   console.log(data);
+  // }).fail(function() {
+  //   console.log("FAIL");
+  // });
+
+  // $.ajax({
+  //   url: link + "light/set/1"
+  // }).done(function() {
+  //   console.log("SUCCESS");
+  // }).fail(function() {
+  //   console.log("FAIL");
+  // });
 
   //LIGHT URL
   var lightM = mainURL + "lightM"
@@ -16,6 +31,8 @@ $(document).ready(function({
     })
   });
 
+
+
   setInterval(function() {
     $.ajax({
       url: lightM
@@ -27,4 +44,4 @@ $(document).ready(function({
   }, 2000);
 
 
-}));
+});
