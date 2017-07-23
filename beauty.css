@@ -112,3 +112,11 @@ margin-right: 50px;*/
         background-color: rgb(128, 128, 128);
       font-style: italic;
   }
+  #frame_button{
+    margin-top: 5px;
+    flex: auto;
+  }
+
+#mainbox {
+padding-top: 30px;
+}

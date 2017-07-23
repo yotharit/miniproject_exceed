@@ -7,8 +7,8 @@ $(document).ready(function() {
 
   //Control the AC Manually
   $('#textAir').val("AC is Close");
-
-  $('#airButton').click(function() {
+document.getElementById("picAir").innerHTML = "<img src='image/airClose.jpg'  style='width:170px;height:120px'>"
+  $('#airMaButt').click(function() {
     if(airMStatus === 0){
       airMStatus++;
       $.ajax({
@@ -17,6 +17,7 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(airMStatus);
         $('#textAir').val("AC IS OPEN!");
+        document.getElementById("picAir").innerHTML = "<img src='image/airOpen.jpg'  style='width:170px;height:120px'>"
       }).fail(function() {
         console.log("FAIL");
       });
@@ -29,6 +30,8 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(doorMStatus);
         $('#textAir').val("AC IS CLOSE!");
+document.getElementById("picAir").innerHTML = "<img src='image/airClose.jpg'  style='width:170px;height:120px'>"
+
       }).fail(function() {
         console.log("FAIL");
       });
@@ -38,8 +41,8 @@ $(document).ready(function() {
 
   //Control the Door Manually
   $('#textDoor').val("DOOR is Close");
-
-  $('#doorButton').click(function() {
+  document.getElementById("picDoor").innerHTML = "<img src='image/doorClose.png' style='width:120px;height:120px'>"
+  $('#doorMaButt').click(function() {
     if(doorMStatus === 0){
       doorMStatus++;
       $.ajax({
@@ -48,6 +51,8 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(doorMStatus);
         $('#textDoor').val("DOOR IS OPEN!");
+        document.getElementById("picDoor").innerHTML = "<img src='image/doorOpen.png' style='width:120px;height:120px'>"
+
       }).fail(function() {
         console.log("FAIL");
       });
@@ -60,6 +65,8 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(doorMStatus);
         $('#textDoor').val("DOOR IS CLOSE!");
+        document.getElementById("picDoor").innerHTML = "<img src='image/doorClose.png' style='width:120px;height:120px'>"
+
       }).fail(function() {
         console.log("FAIL");
       });
@@ -69,8 +76,8 @@ $(document).ready(function() {
 
   //Control the FrontDoor Light Manually!
   $('#textLight').val("FRONT LIGHT IS CLOSE!");
-
-  $('#flightButton').click(function() {
+  document.getElementById("picLightClo").innerHTML = "<img src='image/lightClose.png'  style='width:120px;height:120px'>"
+  $('#flightMaButt').click(function() {
     if(lightMStatus === 0){
       lightMStatus++;
       $.ajax({
@@ -79,6 +86,7 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(lightMStatus);
         $('#textLight').val("FRONT LIGHT IS OPEN!");
+        document.getElementById("picLightClo").innerHTML = "<img src='image/lightOpen.jpg'  style='width:120px;height:120px'>"
       }).fail(function() {
         console.log("FAIL");
       });
@@ -91,6 +99,7 @@ $(document).ready(function() {
         console.log("SUCCESS");
         console.log(lightMStatus);
         $('#textLight').val("FRONT LIGHT IS CLOSE!");
+          document.getElementById("picLightClo").innerHTML = "<img src='image/lightClose.png'  style='width:120px;height:120px'>"
       }).fail(function() {
         console.log("FAIL");
       });
@@ -109,6 +118,9 @@ $(document).ready(function() {
     });
 
   }, 2000);
+
+
+ // เปลี่ยนรูป
 
 
 });
