@@ -57,3 +57,58 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+
+#title {
+      border: 2px solid black;
+      text-align: center;
+      background-color: rgb(128, 128, 128);
+      font-size: 50;
+      /*margin-left: 50px;
+margin-right: 50px;*/
+      margin-bottom: auto;
+  }
+
+  #frame {
+      border: 2px solid black;
+      background-color: rgb(200, 200, 200);
+      /*margin-left: 50px;
+  margin-right: 50px;*/
+      display: flex;
+  }
+
+  #color_left {
+      background-color: rgb(165, 165, 165);
+  }
+
+  #left_frame {
+      color: blue;
+      text-decoration: underline;
+      margin-left: 18px;
+      width: 110px;
+      height: 490px;
+  }
+
+  #middle_frame {
+      /*margin-top: auto;*/
+      /*margin-left: 50px;*/ˆ
+      margin-right: 50px;
+      /*margin-bottom: auto;*/
+      float: center;
+  }
+
+  #right_frame {
+      margin: auto;
+      margin-left: 50px;
+      margin-right: auto;
+      flex: right;
+  }
+  #bottom_frame {
+      border: 2px solid black;
+      text-align: center;
+      padding: 20px;
+      font-size: 20;
+      margin-bottom: auto;
+        background-color: rgb(128, 128, 128);
+      font-style: italic;
+  }

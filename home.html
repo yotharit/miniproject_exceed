@@ -26,49 +26,97 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="form-group">
-            <textarea class="form-control" rows="1" id="manyPeople">0 people in home</textarea>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="form-group">
+                <textarea class="form-control" rows="1" id="manyPeople">0 people in home</textarea>
+            </div>
         </div>
 
 
-        <div class="form-group">
-            <textarea class="form-control" rows="1" id="textDoor">The door conditioner is Clossed</textarea>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <textarea class="form-control" rows="1" id="textDoor">The door is Clossed</textarea>
 
-        </div>
-        <label class="switch">
-            <input type="checkbox" id="doorButton">
-            <span class="slider"></span>
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <textarea class="form-control" rows="1" id="textAir">Air conditioner is Clossed</textarea>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <textarea class="form-control" rows="1" id="textLight">Front light is Clossed</textarea>
+                </div>
+
+            </div>
+            <!-- สวิตประตู -->
+            <div class="col-md-1">
+                <label class="switch">
+          <input type="checkbox" id="doorAuButt">
+          <span class="slider"></span>
 
           </label>
+            </div>
+              <div class="col-md-1">
+                <p>Auto</p>
+                </div>
 
-
-
-
-
-
-        <div class="form-group">
-            <textarea class="form-control" rows="1" id="textAir">Air conditioner is Clossed</textarea>
-
-        </div>
-        <label class="switch">
-            <input type="checkbox" id="airButton">
-            <span class="slider"></span>
+            <div class="col-md-2">
+                <label class="switch">
+          <input type="checkbox" id="doorMaButt">
+          <span class="slider"></span>
 
           </label>
-        <div class="form-group">
-            <textarea class="form-control" rows="1" id="textLight">Front light is Clossed</textarea>
+            </div>
+            <!--   ประตู   -->
+            <!-- สวิตแอร์ -->
+
+            <div class="col-md-2">
+                <label class="switch">
+      <input type="checkbox" id="airAuButt">
+      <span class="slider"></span>
+
+    </label>
+            </div>
+            <div class="col-md-2">
+                <label class="switch">
+      <input type="checkbox" id="airMaButt">
+      <span class="slider"></span>
+
+    </label>
+            </div>
+            <!-- แอร์ -->
+            <!-- สวิตไฟหน้าบ้าน -->
+            <div class="col-md-2">
+                <label class="switch">
+                  <input type="checkbox" id="flightAuButt">
+                  <span class="slider"></span>
+
+
+                </label>
+            </div>
+
+            <div class="col-md-2">
+                <label class="switch">
+                  <input type="checkbox" id="flightMaButt">
+                  <span class="slider"></span>
+
+                </label>
+            </div>
+            <!--  ไฟหน้าบ้าน-->
+
+
         </div>
-
-        <label class="switch">
-              <input type="checkbox" id="flightButton">
-              <span class="slider"></span>
-
-            </label>
-
-
-
-
     </div>
 </body>
 
