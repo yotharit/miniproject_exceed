@@ -14,8 +14,8 @@ int temperature;
 //int switchInput;
 //boolean isOn;
 
-int lightMStatus;
-int airMStatus;
+String lightMStatus;
+String airMStatus;
 
 String tmpWrite = "";
 String tmpRead = "";
@@ -30,8 +30,13 @@ void setup() {
   pinMode(A0, INPUT);
   pinMode(LIGHT, OUTPUT);
   pinMode(AIR, OUTPUT);
-//  pinMode(SWITCH, INPUT);
+  //  pinMode(SWITCH, INPUT);
   //isOn = false;
+
+//  tmpWrite = "/data/5910500147/lightm/set/2";
+//  write();
+//  tmpWrite = "/data/5910500147/airm/set/2";
+//  write();
 
 }
 void loop()
@@ -42,29 +47,29 @@ void loop()
   Serial.print(F("light manual status: "));
   tmpRead = "/data/5910500147/lightm/";
   lightMStatus = read();
-   delay(500);
+  delay(500);
   tmpWrite = "/data/5910500147/flux/set/" + String(light);
   write();
   delay(500);
 
-  if (lightMStatus == "auto") {
+  if (lightMStatus == "2") {
     if (light >= 500) {
       digitalWrite(LIGHT, HIGH);
       tmpWrite = "/data/5910500147/light/set/on";
       write();
-       delay(500);
+      delay(500);
     }
     else {
       digitalWrite(LIGHT, LOW);
       tmpWrite = "/data/5910500147/light/set/off";
       write();
-       delay(500);
+      delay(500);
     }
   }
-  else if (lightMStatus == "on") {
+  else if (lightMStatus == "1") {
     digitalWrite(LIGHT, HIGH);
   }
-  else if (lightMStatus == "off") {
+  else if (lightMStatus == "0") {
     digitalWrite(LIGHT, LOW);
   }
 
@@ -75,7 +80,7 @@ void loop()
 
   dhtTemp = DHT.read11(DHT11);
   temperature = (int) DHT.temperature;
-//  switchInput = digitalRead(SWITCH);
+  //  switchInput = digitalRead(SWITCH);
   Serial.print(F("temperature: "));
   Serial.println(temperature);
   tmpWrite = "/data/5910500147/temperature/set/" + String(temperature) ;
@@ -83,8 +88,8 @@ void loop()
   Serial.print(F("air manual status: "));
   tmpRead = "/data/5910500147/airm/";
   airMStatus = read();
-   delay(500);
-  if (airMStatus == "auto") {
+  delay(500);
+  if (airMStatus == "2") {
 
     if (temperature >= 25) {
       digitalWrite(AIR, HIGH);
@@ -95,11 +100,11 @@ void loop()
     }
 
   }
-  if (airMStatus == "off") {
+  if (airMStatus == "0") {
     digitalWrite(AIR, LOW);
   }
 
-  if (airMStatus == "on") {
+  if (airMStatus == "1") {
     digitalWrite(AIR, HIGH);
   }
   tmpWrite = "";
@@ -114,7 +119,7 @@ void write() {
   Serial.println(tmpWrite);
 }
 
-int read() {
+String read() {
 
   data = Ciao.read(CONNECTOR, SERVER_ADDR, tmpRead);
   //str = " / data / 5910500147 / light / set / qwertyu" ;
@@ -124,7 +129,7 @@ int read() {
   }
   else {
     Serial.println(String(data.get(2)));
-    return int(data.get(2));
+    return String(data.get(2));
   }
 }
 
